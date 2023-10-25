@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Todo List</title>
+</head>
+<body>
+    <h1>My Static Todo List</h1>
+    <ul id="todo-list">
+    </ul>
+
+    <script>
+        // Define your empty todo list
+        const todoList = [];
+
+        // Function to add a task to the list
+        function addTask(task) {
+            todoList.push(task);
+        }
+
+        // Add tasks to the list
+        addTask('Buy groceries');
+        addTask('Walk the dog');
+        addTask('Read a book');
+        addTask('Do the laundry');
+
+        // Get the <ul> element where we'll display the todo items
+        const todoListElement = document.getElementById('todo-list');
+
+        // Loop through the todo list and create list items for each task
+        todoList.forEach((task) => {
+            const listItem = document.createElement('li');
+            listItem.textContent = task;
+            todoListElement.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
